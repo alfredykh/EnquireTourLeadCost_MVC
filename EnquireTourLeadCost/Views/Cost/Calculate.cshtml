@@ -1,0 +1,63 @@
+﻿@model EnquireTourLeadCost.Models.TourLead
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p></p>
+
+<form action="/Cost/Calculate" method="POST">
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td><input name="Id" /></td>
+        </tr>
+        <tr>
+            <td>Days:</td>
+            <td><input type="day" name="day" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <input type="submit" name="submit" value="Calculate" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<style>
+    tr, td {
+        padding: 2px;
+    }
+</style>
+
+
+@*@@using (Html.BeginForm("Index", "Cost", FormMethod.Post))
+    {
+
+        <table align="center">
+            <tr>
+                <td>@Html.LabelFor(mod => mod.Id)</td>
+                <td>@Html.TextBoxFor(mod => mod.Id)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Day)</td>
+                <td>@Html.TextBoxFor(x => x.Day)</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><input type="submit" value="Calculate"></td>
+            </tr>
+        </table>
+    } *@
+
+@{
+    if (ViewData["cost"] != null)
+    {
+
+        int id = (int)ViewData["Id"];
+        string rank = (string)ViewData["Rank"];
+        int cost = (int)ViewData["cost"];
+        string name = (string) ViewData["name"];
+        @:<h1>Your Total Cost for @name of rank @rank is @cost</h1>
+    }
+}
