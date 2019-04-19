@@ -3,18 +3,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tour Leader Cost Calculation</h2>
 
 <p></p>
 
 <form action="/Cost/Calculate" method="POST">
     <table>
         <tr>
-            <td>Id:</td>
+            <td>Tour Leader ID:</td>
             <td><input name="Id" /></td>
         </tr>
         <tr>
-            <td>Days:</td>
+            <td>Number of Working Days:</td>
             <td><input type="day" name="day" /></td>
         </tr>
         <tr>
@@ -58,6 +58,6 @@
         string rank = (string)ViewData["Rank"];
         int cost = (int)ViewData["cost"];
         string name = (string) ViewData["name"];
-        @:<h1>Your Total Cost for @name of rank @rank is @cost</h1>
+        @:<h1>The total cost for @name of rank @rank is @cost</h1>
     }
 }
